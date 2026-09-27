@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - JS & DOM</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+        <!-- Navbar -->
+<nav class="navbar">
+    <h2 class="logo">MAHMUD</h2>
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="home.html">JavaScript&DOM</a></li>
+        <li><a href="service.html">PHP&PHP-MySQL</a></li>
+        <li><a href="contact.html">OOP-PHP</a></li>
+        <li><a href="about.html">MVC</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+</nav>
+
+    <h1 class="home">JavaScript & DOM Complete Basics</h1>
+    <div class="center">
+        <button class="dark-btn" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+    
+    <div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+        
+    </div>
+
+    <h2 class="home">JavaScript Basics + DOM All Topics</h2>
+
+    <table>
+
+        <tr>
+            <th>Topic</th>
+            <th>Code</th>
+            <th>How it Works</th>
+        </tr>
+
+        <!-- VARIABLE -->
+        <tr>
+            <td>Variable</td>
+            <td>
+<pre>
+    let name = "Mahmud";
+    const age = 21;
+    var city = "Dhaka";
+</pre>
+                    </td>
+                    <td>
+
+    Stores data in memory for later use.
+
+                        
+                    </td>
+                </tr>
+
+                <!-- INPUT -->
+                <tr>
+                    <td>Input (DOM)</td>
+                    <td>
+<pre>
+    let value = document.getElementById("input").value;
+</pre>
+                    </td>
+                    <td>Gets user input from HTML form.</td>
+                </tr>
+
+                <!-- PRINT -->
+                <tr>
+                    <td>Print Output</td>
+                    <td>
+<pre>
+    console.log("Hello World");
+    document.write("Hello");
+    alert("Hi");
+</pre>
+                    </td>
+                    <td>Shows output in console, page or popup.</td>
+                </tr>
+
+                <!-- FUNCTION -->
+                <tr>
+                    <td>Function</td>
+                    <td>
+<pre>
+    function greet() {
+        return "Hello User";
+    }
+</pre>
+                    </td>
+                    <td>Reusable block of code.</td>
+                </tr>
+
+                <!-- IF ELSE -->
+                <tr>
+                    <td>If / Else</td>
+                    <td>
+<pre>
+    if (age > 18) {
+        console.log("Adult");
+    } else {
+        console.log("Child");
+    }
+</pre>
+                    </td>
+                    <td>Used for decision making.</td>
+                </tr>
+
+                <!-- ARRAY -->
+                <tr>
+                    <td>Array</td>
+                    <td>
+<pre>
+    let fruits = ["Apple", "Banana", "Mango"];
+    console.log(fruits[0]);
+</pre>
+                    </td>
+                    <td>Stores multiple values in one variable.</td>
+                </tr>
+
+                <!-- STRING -->
+                <tr>
+                    <td>String</td>
+                    <td>
+<pre>
+    let text = "Hello World";
+    console.log(text.length);
+    console.log(text.toUpperCase());
+</pre>
+                    </td>
+                    <td>Text manipulation in JavaScript.</td>
+                </tr>
+
+                <!-- DOM SELECT -->
+                <tr>
+                    <td>DOM Select</td>
+                    <td>
+<pre>
+    document.getElementById("id");
+    document.querySelector(".class");
+</pre>
+                    </td>
+                    <td>Select HTML elements.</td>
+                </tr>
+
+                <!-- DOM CHANGE TEXT -->
+                <tr>
+                    <td>Change Text</td>
+                    <td>
+<pre>
+    document.getElementById("demo").innerHTML = "Hello JS";
+</pre>
+                    </td>
+                    <td>Changes HTML content dynamically.</td>
+                </tr>
+
+                <!-- DOM STYLE -->
+                <tr>
+                    <td>Change Style</td>
+                    <td>
+<pre>
+    document.getElementById("box").style.color = "red";
+</pre>
+                    </td>
+                    <td>Changes CSS using JavaScript.</td>
+                </tr>
+
+                <!-- DOM EVENT -->
+                <tr>
+                    <td>Click Event</td>
+                    <td>
+<pre>
+    button onclick="myFunction()" Click button 
+
+    function myFunction(){
+        alert("Clicked!");
+    }
+</pre>
+                    </td>
+                    <td>Runs code when user clicks button.</td>
+                </tr>
+
+                <!-- DOM CREATE -->
+                <tr>
+                    <td>Create Element</td>
+                    <td>
+<pre>
+    let p = document.createElement("p");
+    p.innerHTML = "New Text";
+    document.body.appendChild(p);
+</pre>
+                    </td>
+                    <td>Creates new HTML element dynamically.</td>
+                </tr>
+
+                <!-- DOM REMOVE -->
+                <tr>
+                    <td>Remove Element</td>
+                    <td>
+<pre>
+    document.getElementById("box").remove();
+</pre>
+                    </td>
+                    <td>Removes HTML element from page.</td>
+                </tr>
+            
+            <!-- IMAGE -->
+    <tr>
+        <td>Image</td>
+        <td>
+<pre>
+    let img = document.getElementById("myImg");
+    img.src = "pic.jpg";
+</pre>
+        </td>
+        <td>Changes image dynamically using DOM.</td>
+    </tr>
+
+    <!-- DATE -->
+    <tr>
+        <td>Date</td>
+        <td>
+<pre>
+    let today = new Date();
+    console.log(today);
+</pre>
+        </td>
+        <td>Shows current date and time.</td>
+    </tr>
+
+    <!-- addEventListener -->
+    <tr>
+        <td>addEventListener</td>
+        <td>
+<pre>
+    document.getElementById("btn")
+    .addEventListener("click", function(){
+        alert("Clicked!");
+    });
+</pre>
+        </td>
+        <td>Attaches event without HTML onclick.</td>
+    </tr>
+
+    <!-- MOUSE OVER -->
+    <tr>
+        <td>onmouseover</td>
+        <td>
+<pre>
+    document.getElementById("box")
+    .onmouseover = function(){
+        this.style.background = "yellow";
+    };
+</pre>
+        </td>
+        <td>Runs when mouse enters element.</td>
+    </tr>
+
+    <!-- MOUSE OUT -->
+    <tr>
+        <td>onmouseout</td>
+        <td>
+<pre>
+    document.getElementById("box")
+    .onmouseout = function(){
+        this.style.background = "white";
+    };
+</pre>
+        </td>
+        <td>Runs when mouse leaves element.</td>
+    </tr>
+
+    <!-- KEYDOWN -->
+    <tr>
+        <td>onkeydown</td>
+        <td>
+<pre>
+    document.addEventListener("keydown", function(e){
+        console.log(e.key);
+    });
+</pre>
+        </td>
+        <td>Detects when key is pressed.</td>
+    </tr>
+
+    <!-- KEYUP -->
+    <tr>
+        <td>onkeyup</td>
+        <td>
+<pre>
+    document.addEventListener("keyup", function(){
+        console.log("Key released");
+    });
+</pre>
+        </td>
+        <td>Detects when key is released.</td>
+    </tr>
+
+    <!-- ONLOAD -->
+    <tr>
+        <td>onload</td>
+        <td>
+<pre>
+    window.onload = function(){
+        alert("Page Loaded");
+    };
+</pre>
+        </td>
+        <td>Runs code when page fully loads.</td>
+    </tr>
+
+    <!-- FORM VALIDATION -->
+    <tr>
+        <td>Form Validation</td>
+        <td>
+<pre>
+    function validate(){
+        let name = document.getElementById("name").value;
+
+        if(name === ""){
+            alert("Name required!");
+            return false;
+        }
+
+        alert("Valid!");
+    }
+</pre>
+        </td>
+        <td>Checks if input is valid before submit.</td>
+    </tr>
+
+    <!-- ALERT / MESSAGE -->
+    <tr>
+        <td>Alert / Message</td>
+        <td>
+<pre>
+    <button onclick="alert('Hello!')">
+    Click
+    </button>
+
+    alert("Hello!");
+    document.getElementById("msg").innerHTML = "Success!";
+</pre>
+    </td>
+    <td>Shows popup or page message.</td>
+    </tr>
+
+<!-- BUTTON ACTION -->
+    <tr>
+    <td>Button Action</td>
+    <td>
+<pre>
+    button onclick="doWork()" Click button
+
+    function doWork(){
+        alert("Button Clicked");
+    }
+</pre>
+    </td>
+    <td>Executes function when button clicked.</td>
+    </tr>
+
+    <!-- RECOMMENDED FULL EXAMPLE -->
+    <tr>
+    <td>Full Example (Form + Event)</td>
+    <td>
+<pre>
+    form onsubmit="return checkForm()">
+        input id="name" placeholder="Name"
+        button type="submit">Submit button
+    form
+
+    function checkForm(){
+        let name = document.getElementById("name").value;
+
+        if(name === ""){
+            alert("Please enter name");
+            return false;
+        }
+
+        document.getElementById("msg").innerHTML =
+        "Hello " + name;
+
+        return false;
+    }
+</pre>
+        </td>
+        <td>example: form, validation, alert, and DOM update.</td>
+    </tr>
+
+    <tr>
+    <td>Click Event (addEventListener)</td>
+    <td>
+<pre>
+&lt;button id="btn"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById("btn").addEventListener("click", function() {
+    alert("Button Clicked!");
+});
+&lt;/script&gt;
+</pre>
+    </td>
+    <td>
+Button click triggers alert using addEventListener.
+    </td>
+</tr>
+
+<tr>
+    <td>Mouse Over Event</td>
+    <td>
+<pre>
+&lt;div id="box"&gt;Hover me&lt;/div&gt;
+
+&lt;script&gt;
+document.getElementById("box").addEventListener("mouseover", function() {
+    console.log("Mouse is over the element");
+});
+&lt;/script&gt;
+</pre>
+    </td>
+    <td>
+Detects mouse entering the element.
+    </td>
+</tr>
+
+<tr>
+    <td>Keyboard Event</td>
+    <td>
+<pre>
+&lt;script&gt;
+document.addEventListener("keydown", function(event) {
+    console.log("Key pressed: " + event.key);
+});
+&lt;/script&gt;
+</pre>
+    </td>
+    <td>
+Tracks keyboard key presses.
+    </td>
+</tr>
+
+<tr>
+    <td>Input Change Event</td>
+    <td>
+<pre>
+&lt;input id="input" type="text"&gt;
+
+&lt;script&gt;
+document.getElementById("input").addEventListener("change", function() {
+    alert("Value changed!");
+});
+&lt;/script&gt;
+</pre>
+    </td>
+    <td>
+Runs when input value changes.
+    </td>
+</tr>
+
+<tr>
+    <td>Form Submit Event</td>
+    <td>
+<pre>
+&lt;form id="form"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Form Submitted!");
+});
+&lt;/script&gt;
+</pre>
+    </td>
+    <td>
+Prevents reload and handles form submit.
+    </td>
+</tr>
+
+<tr>
+    <td>Image Click (Change Image)</td>
+    <td>
+<pre>
+&lt;img id="myImage" src="image1.jpg" width="100"&gt;
+
+&lt;script&gt;
+document.getElementById("myImage").addEventListener("click", function() {
+    this.src = "image2.jpg";
+});
+&lt;/script&gt;
+</pre>
+    </td>
+    <td>
+Changes image when clicked.
+    </td>
+</tr>
+
+    </table>
+    <div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+    </div>
+<button id="topBtn" onclick="scrollToTop()">⬆ Top</button>
+<script>
+// Show button when scrolling down
+window.onscroll = function () {
+    let btn = document.getElementById("topBtn");
+
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+<!-- Dark modE -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            // save mode
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // load saved theme
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+    </script>
+
+</body>
+</html>

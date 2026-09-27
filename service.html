@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>service</title>
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+    <h2 class="logo">MAHMUD</h2>
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="home.html">JavaScript&DOM</a></li>
+        <li><a href="service.html">PHP&PHP-MySQL</a></li>
+        <li><a href="contact.html">OOP-PHP</a></li>
+        <li><a href="about.html">MVC</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+</nav>
+
+    <h1 class="home">PHP & PHP-MySQL Complete Basics</h1>
+    <div class="center">
+        <button class="dark-btn" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+    
+    <div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+        
+    </div>
+
+    <table>
+<tr>
+    <th>Topic</th>
+    <th>Code</th>
+    <th>How it Works</th>
+</tr>
+
+<tr>
+<td>Variable</td>
+<td>
+<pre>
+$name = "Mahmud";
+$age = 21;
+</pre>
+</td>
+<td>Stores data in PHP variables.</td>
+</tr>
+
+<tr>
+<td>Print Output</td>
+<td>
+<pre>
+echo "Hello World";
+print "Hi";
+</pre>
+</td>
+<td>Displays output on browser.</td>
+</tr>
+
+<tr>
+<td>Input (Form)</td>
+<td>
+<pre>
+$name = $_POST['name'];
+</pre>
+</td>
+<td>Gets form data using POST method.</td>
+</tr>
+
+<tr>
+<td>If / Else</td>
+<td>
+<pre>
+if($age > 18){
+    echo "Adult";
+}else{
+    echo "Child";
+}
+</pre>
+</td>
+<td>Decision making.</td>
+</tr>
+
+<tr>
+<td>Array</td>
+<td>
+<pre>
+$fruits = ["Apple","Banana","Mango"];
+echo $fruits[0];
+</pre>
+</td>
+<td>Stores multiple values.</td>
+</tr>
+
+<tr>
+<td>Function</td>
+<td>
+<pre>
+function greet(){
+    return "Hello";
+}
+echo greet();
+</pre>
+</td>
+<td>Reusable code block.</td>
+</tr>
+
+<tr>
+<td>String</td>
+<td>
+<pre>
+$text = "Hello";
+echo strlen($text);
+echo strtoupper($text);
+</pre>
+</td>
+<td>String operations.</td>
+</tr>
+
+</table>
+
+<div class="php-section">
+
+    <!-- 1. FORM + VALIDATION + SHOW MESSAGE -->
+    <div class="box">
+        <h3>2. Form + Validation</h3>
+<pre>
+&lt;?php
+$msg = "";
+
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+
+    if($name == "" || $email == ""){
+        $msg = "❌ All fields required!";
+    } else {
+        $msg = "✅ Success!";
+    }
+}
+?&gt;
+
+&lt;form method="POST"&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;input type="email" name="email"&gt;
+    &lt;button name="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;?php echo $msg; ?&gt;&lt;/p&gt;
+</pre>
+    </div>
+
+    <!-- 2. DATABASE CONNECTION -->
+    <div class="box">
+        <h3>3. Database Connection</h3>
+<pre>
+&lt;?php
+$conn = mysqli_connect("localhost","root","","test");
+
+if(!$conn){
+    die("Connection Failed");
+}
+?&gt;
+</pre>
+    </div>
+
+    <!-- INSERT -->
+    <div class="box">
+        <h3>Insert Data</h3>
+<pre>
+&lt;?php
+if(isset($_POST['add'])){
+    $name = $_POST['name'];
+
+    if($name == ""){
+        echo "❌ Name required!";
+    } else {
+        mysqli_query($conn,
+        "INSERT INTO users(name) VALUES('$name')");
+        echo "✅ Data inserted!";
+    }
+}
+?&gt;
+</pre>
+    </div>
+
+    <!-- SHOW -->
+    <div class="box">
+        <h3>Show / Display Data</h3>
+<pre>
+&lt;?php
+$result = mysqli_query($conn,"SELECT * FROM users");
+
+while($row = mysqli_fetch_assoc($result)){
+    echo $row['id']." - ".$row['name']."&lt;br&gt;";
+}
+?&gt;
+</pre>
+    </div>
+
+    <!-- DELETE -->
+    <div class="box">
+        <h3>Delete Data</h3>
+<pre>
+&lt;?php
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+    mysqli_query($conn,
+    "DELETE FROM users WHERE id=$id");
+
+    echo "🗑️ Deleted!";
+}
+?&gt;
+</pre>
+    </div>
+
+    <!-- EDIT -->
+    <div class="box">
+        <h3>Edit / Update Data</h3>
+<pre>
+&lt;?php
+if(isset($_POST['update'])){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+
+    mysqli_query($conn,
+    "UPDATE users SET name='$name' WHERE id=$id");
+
+    echo "✏️ Updated!";
+}
+?&gt;
+</pre>
+    </div>
+
+    <!-- COMPLETE CRUD -->
+    <div class="box">
+        <h3>Complete Mini CRUD Example</h3>
+<pre>
+&lt;?php
+$conn = mysqli_connect("localhost","root","","test");
+$msg = "";
+
+// INSERT
+if(isset($_POST['add'])){
+    $name = $_POST['name'];
+
+    if($name == ""){
+        $msg = "❌ Required!";
+    } else {
+        mysqli_query($conn,
+        "INSERT INTO users(name) VALUES('$name')");
+        $msg = "✅ Added!";
+    }
+}
+
+// DELETE
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    mysqli_query($conn,
+    "DELETE FROM users WHERE id=$id");
+    $msg = "🗑️ Deleted!";
+}
+?&gt;
+
+&lt;form method="POST"&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;button name="add"&gt;Add&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;?php echo $msg; ?&gt;&lt;/p&gt;
+
+&lt;?php
+$result = mysqli_query($conn,"SELECT * FROM users");
+
+while($row = mysqli_fetch_assoc($result)){
+    echo $row['name'] .
+    " &lt;a href='?delete=".$row['id']."'&gt;Delete&lt;/a&gt;&lt;br&gt;";
+}
+?&gt;
+</pre>
+    </div>
+
+</div>
+
+<div class="box">
+    <h3>PDO CRUD (Connection, Create, Read, Update, Delete)</h3>
+<pre>
+&lt;?php
+// 🔹 1. CONNECTION
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=test","root","");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e){
+    echo "Connection Failed: " . $e->getMessage();
+}
+
+// 🔹 2. CREATE (INSERT)
+if(isset($_POST['add'])){
+    $name = $_POST['name'];
+
+    $stmt = $pdo->prepare(
+    "INSERT INTO users(name) VALUES(:name)");
+
+    $stmt->execute(['name' => $name]);
+
+    echo "✅ Data Inserted&lt;br&gt;";
+}
+
+// 🔹 3. READ (SELECT)
+$stmt = $pdo->query("SELECT * FROM users");
+
+while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    echo $row['id']." - ".$row['name'].
+    " &lt;a href='?edit=".$row['id']."'&gt;Edit&lt;/a&gt; 
+      &lt;a href='?delete=".$row['id']."'&gt;Delete&lt;/a&gt;&lt;br&gt;";
+}
+
+// 🔹 4. UPDATE
+if(isset($_POST['update'])){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+
+    $stmt = $pdo->prepare(
+    "UPDATE users SET name=:name WHERE id=:id");
+
+    $stmt->execute([
+        'name' => $name,
+        'id' => $id
+    ]);
+
+    echo "✏️ Updated&lt;br&gt;";
+}
+
+// 🔹 5. DELETE
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+
+    $stmt = $pdo->prepare(
+    "DELETE FROM users WHERE id=:id");
+
+    $stmt->execute(['id' => $id]);
+
+    echo "🗑️ Deleted&lt;br&gt;";
+}
+?&gt;
+
+&lt;form method="POST"&gt;
+    &lt;input type="hidden" name="id"&gt;
+    &lt;input type="text" name="name" placeholder="Enter Name"&gt;
+
+    &lt;button name="add"&gt;Add&lt;/button&gt;
+    &lt;button name="update"&gt;Update&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+</div>
+<div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+    </div>
+
+<button id="topBtn" onclick="scrollToTop()">⬆ Top</button>
+<script>
+// Show button when scrolling down
+window.onscroll = function () {
+    let btn = document.getElementById("topBtn");
+
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+<!-- Dark modE -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            // save mode
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // load saved theme
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+    </script>
+</body>
+</html>

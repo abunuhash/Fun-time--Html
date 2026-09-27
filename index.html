@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Order Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <h2 class="logo">MAHMUD</h2>
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="home.html">JavaScript&DOM</a></li>
+        <li><a href="service.html">PHP&PHP-MySQL</a></li>
+        <li><a href="contact.html">OOP-PHP</a></li>
+        <li><a href="about.html">MVC</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <h1 class="well">Welcome to My Website</h1>
+
+    <!-- DESCRIPTION -->
+    <p class="description">
+        This is a beginner-friendly educational web project built using HTML, CSS, and JavaScript.
+        It demonstrates core web development concepts such as DOM manipulation, event handling,
+        form validation, and dynamic calculations. The website also includes multiple learning pages
+        covering HTML, CSS, JavaScript, PHP, MySQL, OOP, and MVC structure to help improve programming skills.
+    </p>
+
+    <p id="para">This is a simple Product Price calculator</p>
+
+    <!-- Get Product -->
+    <button onclick="showRandomProduct()">Get Started</button>
+    <h2 id="productName">Product Name: </h2>
+
+    <!-- Order Form -->
+    <form onsubmit="return showMessage()">
+
+        <label>Price:</label>
+        <input type="number" id="Price" placeholder="Enter price">
+
+        <br><br>
+
+        <label>Quantity:</label>
+        <input type="number" id="qty" min="1" placeholder="Enter quantity">
+
+        <br><br>
+
+        <button type="button" onclick="calculateCost()">Calculate Cost</button>
+
+        <p id="cost">Final Cost: $0</p>
+
+        <br>
+
+        <button type="submit">Submit Order</button>
+
+        <p id="message"></p>
+
+    </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Mahmud | All Rights Reserved</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+
+// Calculate total cost
+function calculateCost() {
+    let qty = document.getElementById("qty").value;
+    let price = document.getElementById("Price").value;
+
+    // validation
+    if (qty === "") {
+        document.getElementById("cost").innerHTML = "Enter quantity!";
+        return;
+    }
+    if (price === "") {
+        document.getElementById("cost").innerHTML = "Enter price!";
+        return;
+    }
+
+    let total = qty * price;
+
+    document.getElementById("cost").innerHTML = "Final Cost: $" + total;
+}
+
+// Show random product
+function showRandomProduct() {
+    let products = [
+        "Wireless Mouse",
+        "Mechanical Keyboard",
+        "Bluetooth Headphones",
+        "Gaming Monitor",
+        "USB Flash Drive",
+        "Laptop Stand",
+        "Smart Watch"
+    ];
+
+    let randomIndex = Math.floor(Math.random() * products.length);
+    let selectedProduct = products[randomIndex];
+
+    document.getElementById("productName").innerHTML =
+        "Product Name: " + selectedProduct;
+}
+
+// Submit order
+function showMessage() {
+    let qty = document.getElementById("qty").value;
+    let price = document.getElementById("Price").value;
+
+    if (qty === "" || price === "") {
+        document.getElementById("message").innerHTML =
+            "Please fill all fields!";
+        return false;
+    }
+
+    let total = qty * price;
+
+    document.getElementById("message").innerHTML =
+        "Order submitted successfully! Total = $" + total;
+
+    // reset form
+    document.getElementById("qty").value = "";
+    document.getElementById("Price").value = "";
+    document.getElementById("cost").innerHTML = "Final Cost: $0";
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>

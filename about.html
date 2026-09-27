@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <h2 class="logo">MAHMUD</h2>
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="home.html">JavaScript&DOM</a></li>
+        <li><a href="service.html">PHP&PHP-MySQL</a></li>
+        <li><a href="contact.html">OOP-PHP</a></li>
+        <li><a href="about.html">MVC</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+</nav>
+
+    <h1 class="home">MVC Complete Basics</h1>
+    <div class="center">
+        <button class="dark-btn" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+    
+    <div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+        
+    </div>
+
+<h2>MVC Design Pattern (.NET) - Detailed</h2>
+
+<table>
+
+<tr>
+<th>Topic</th>
+<th>Code / Concept</th>
+<th>Detailed Explanation</th>
+</tr>
+
+<!-- MVC INTRO -->
+<tr>
+<td>MVC Definition</td>
+<td>
+<pre>
+MVC = Model + View + Controller
+</pre>
+</td>
+<td>
+Architecture pattern that separates application into 3 layers:
+Model (data), View (UI), Controller (logic).
+</td>
+</tr>
+
+<!-- PROJECT STRUCTURE -->
+<tr>
+<td>Project Structure</td>
+<td>
+<pre>
+/Models
+/Views
+/Controllers
+/wwwroot
+/appsettings.json
+</pre>
+</td>
+<td>
+Organized folder system in ASP.NET MVC for separation of concerns.
+</td>
+</tr>
+
+<!-- MODEL -->
+<tr>
+<td>Model (Data Layer)</td>
+<td>
+<pre>
+public class Student {
+    public int Id { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+}
+</pre>
+</td>
+<td>
+Handles data, validation, and business logic. Uses Data Annotations.
+</td>
+</tr>
+
+<!-- VIEW -->
+<tr>
+<td>View (UI Layer)</td>
+<td>
+<pre>
+@model Student
+
+<form asp-action="Create">
+    <input asp-for="Name" />
+    <button type="submit">Save</button>
+</form>
+</pre>
+</td>
+<td>
+Renders UI using Razor syntax. Displays Model data.
+</td>
+</tr>
+
+<!-- CONTROLLER -->
+<tr>
+<td>Controller (Logic Layer)</td>
+<td>
+<pre>
+public class StudentController : Controller {
+
+    public IActionResult Index(){
+        return View();
+    }
+}
+</pre>
+</td>
+<td>
+Handles user request, interacts with Model, returns View.
+</td>
+</tr>
+
+<!-- MVC FLOW -->
+<tr>
+<td>Full MVC Flow</td>
+<td>
+<pre>
+1. User sends request (URL)
+2. Routing finds Controller
+3. Controller calls Model
+4. Model returns data
+5. Controller sends data to View
+6. View renders HTML
+</pre>
+</td>
+<td>
+Complete lifecycle of request processing in MVC.
+</td>
+</tr>
+
+<!-- ROUTING -->
+<tr>
+<td>Routing</td>
+<td>
+<pre>
+app.MapControllerRoute(
+ name: "default",
+ pattern: "{controller=Home}/{action=Index}/{id?}"
+);
+</pre>
+</td>
+<td>
+Maps URL to Controller and Action method.
+</td>
+</tr>
+
+<!-- MODEL BINDING -->
+<tr>
+<td>Model Binding</td>
+<td>
+<pre>
+[HttpPost]
+public IActionResult Create(Student s){
+    return View(s);
+}
+</pre>
+</td>
+<td>
+Automatically maps form data to model object.
+</td>
+</tr>
+
+<!-- VALIDATION -->
+<tr>
+<td>Validation</td>
+<td>
+<pre>
+[Required]
+[StringLength(50)]
+public string Name { get; set; }
+</pre>
+</td>
+<td>
+Ensures correct data input using annotations.
+</td>
+</tr>
+
+<!-- VIEWBAG -->
+<tr>
+<td>ViewBag / ViewData</td>
+<td>
+<pre>
+ViewBag.Name = "Mahmud";
+ViewData["Age"] = 21;
+</pre>
+</td>
+<td>
+Pass data from Controller to View.
+</td>
+</tr>
+
+<!-- TEMPDATA -->
+<tr>
+<td>TempData</td>
+<td>
+<pre>
+TempData["msg"] = "Saved!";
+</pre>
+</td>
+<td>
+Stores data for one request (redirect).
+</td>
+</tr>
+
+<!-- CRUD -->
+<tr>
+<td>Full CRUD</td>
+<td>
+<pre>
+// CREATE
+[HttpPost]
+public IActionResult Create(Student s){
+    db.Add(s);
+    db.SaveChanges();
+    return RedirectToAction("Index");
+}
+
+// READ
+public IActionResult Index(){
+    return View(db.Students.ToList());
+}
+
+// DELETE
+public IActionResult Delete(int id){
+    var s = db.Students.Find(id);
+    db.Remove(s);
+    db.SaveChanges();
+    return RedirectToAction("Index");
+}
+</pre>
+</td>
+<td>
+Basic database operations in MVC.
+</td>
+</tr>
+
+<!-- RAZOR -->
+<tr>
+<td>Razor Syntax</td>
+<td>
+<pre>
+@Model.Name
+@foreach(var item in Model){
+    <p>@item.Name</p>
+}
+</pre>
+</td>
+<td>
+Used inside View to write C# code in HTML.
+</td>
+</tr>
+
+<!-- FILTERS -->
+<tr>
+<td>Filters</td>
+<td>
+<pre>
+[Authorize]
+public IActionResult Dashboard(){
+    return View();
+}
+</pre>
+</td>
+<td>
+Used for authentication, logging, security.
+</td>
+</tr>
+
+<!-- DEPENDENCY -->
+<tr>
+<td>Dependency Injection</td>
+<td>
+<pre>
+public StudentController(AppDbContext db){
+    _db = db;
+}
+</pre>
+</td>
+<td>
+Inject services like database context.
+</td>
+</tr>
+
+<!-- REAL LIFE -->
+<tr>
+<td>Real Life Example</td>
+<td>
+<pre>
+Controller = Waiter
+Model = Kitchen
+View = Customer Table
+</pre>
+</td>
+<td>
+Controller takes order → Model prepares → View shows.
+</td>
+</tr>
+
+<!-- ADVANTAGES -->
+<tr>
+<td>Advantages</td>
+<td>
+<pre>
+- Separation of concerns
+- Easy testing
+- Scalable
+- Clean code
+</pre>
+</td>
+<td>
+Widely used in enterprise applications.
+</td>
+</tr>
+
+<!-- DISADVANTAGES -->
+<tr>
+<td>Disadvantages</td>
+<td>
+<pre>
+- Complex structure
+- Learning curve
+</pre>
+</td>
+<td>
+Not beginner-friendly initially.
+</td>
+</tr>
+
+<!-- EXAM -->
+<tr>
+<td>🔥 Exam Questions</td>
+<td>
+<pre>
+Q1: What is MVC?
+Q2: Explain MVC flow.
+Q3: Difference between ViewBag & ViewData?
+Q4: What is Routing?
+Q5: What is Model Binding?
+</pre>
+</td>
+<td>
+Most common viva + written questions.
+</td>
+</tr>
+
+</table>
+
+<div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+    </div>
+
+<button id="topBtn" onclick="scrollToTop()">⬆ Top</button>
+<script>
+// Show button when scrolling down
+window.onscroll = function () {
+    let btn = document.getElementById("topBtn");
+
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+    <!-- Dark modE -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            // save mode
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // load saved theme
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+    </script>
+</body>
+</html>

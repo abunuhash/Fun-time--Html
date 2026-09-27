@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h1 class="login">Login </h1>
+
+        <form onsubmit="return loginUser()">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter email" >
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password" required>
+
+            <button type="submit" class="btn-login" >Login</button>
+
+        </form>
+
+        <button class="Reload"  onclick="goBack()">Back</button>
+
+        <p id="msg"></p>
+    </div>
+
+<script>
+function loginUser() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (email === "" || password === "") {
+        document.getElementById("msg").innerHTML =
+            "Please fill all fields!";
+        return false;
+    }
+
+    document.getElementById("msg").innerHTML =
+        "Login successful! Welcome " + email;
+
+    return false; 
+}
+</script>
+
+<script>
+    function goBack() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>

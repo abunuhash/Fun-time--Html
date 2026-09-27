@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <h2 class="logo">MAHMUD</h2>
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="home.html">JavaScript&DOM</a></li>
+        <li><a href="service.html">PHP&PHP-MySQL</a></li>
+        <li><a href="contact.html">OOP-PHP</a></li>
+        <li><a href="about.html">MVC</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+</nav>
+
+    <h1 class="home">CSS Complete Basics</h1>
+    <div class="center">
+        <button class="dark-btn" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+    
+    <div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+        
+    </div>
+<h2>CSS Complete Topics (Code + Output)</h2>
+
+<table border="1" width="100%">
+<tr>
+    <th>Selector Type</th>
+    <th>Code (Text Format)</th>
+    <th>Output / Result</th>
+</tr>
+
+<!-- CLASS SELECTOR -->
+<tr>
+<td>Class Selector (.)</td>
+<td>
+CSS:<br>
+.myClass {<br>
+&nbsp;&nbsp;color: blue;<br>
+}
+<br><br>
+HTML:<br>
+&lt;p class="myClass"&gt;Hello Class&lt;/p&gt;
+</td>
+<td>
+<p style="color:blue;">Hello Class (Styled by class)</p>
+</td>
+</tr>
+
+<!-- ID SELECTOR -->
+<tr>
+<td>ID Selector (#)</td>
+<td>
+CSS:<br>
+#myId {<br>
+&nbsp;&nbsp;color: red;<br>
+&nbsp;&nbsp;font-weight: bold;<br>
+}
+<br><br>
+HTML:<br>
+&lt;p id="myId"&gt;Hello ID&lt;/p&gt;
+</td>
+<td>
+<p style="color:red;font-weight:bold;">Hello ID (Styled by ID)</p>
+</td>
+</tr>
+
+<!-- DIFFERENCE -->
+<tr>
+<td>ID vs Class</td>
+<td>
+ID → # (Unique, only one)<br>
+Class → . (Reusable multiple)
+</td>
+<td>
+ID = single element<br>
+Class = multiple elements
+</td>
+</tr>
+
+<!-- COMBINATION -->
+<tr>
+<td>Class + ID Together</td>
+<td>
+#box { color: green; }<br>
+.highlight { background: yellow; }
+<br><br>
+&lt;div id="box" class="highlight"&gt;Text&lt;/div&gt;
+</td>
+<td>
+<div style="color:green;background:yellow;">
+Styled Box
+</div>
+</td>
+</tr>
+<tr>
+    <th>Topic</th>
+    <th>Code (Text Format)</th>
+    <th>Output / Result</th>
+</tr>
+
+<!-- CSS INTRO -->
+<tr>
+<td>CSS Syntax</td>
+<td>
+selector {<br>
+&nbsp;&nbsp;color: red;<br>
+&nbsp;&nbsp;font-size: 20px;<br>
+}
+</td>
+<td>Applies style to HTML elements</td>
+</tr>
+
+<!-- COLOR -->
+<tr>
+<td>Text Color</td>
+<td>
+p {<br>
+&nbsp;&nbsp;color: blue;<br>
+}
+</td>
+<td><p style="color:blue;">This text is blue</p></td>
+</tr>
+
+<!-- BACKGROUND -->
+<tr>
+<td>Background Color</td>
+<td>
+body {<br>
+&nbsp;&nbsp;background-color: lightgray;<br>
+}
+</td>
+<td>Page background becomes light gray</td>
+</tr>
+
+<!-- FONT SIZE -->
+<tr>
+<td>Font Size</td>
+<td>
+h1 {<br>
+&nbsp;&nbsp;font-size: 30px;<br>
+}
+</td>
+<td><h1 style="font-size:30px;">Big Text</h1></td>
+</tr>
+
+<!-- TEXT ALIGN -->
+<tr>
+<td>Text Align</td>
+<td>
+p {<br>
+&nbsp;&nbsp;text-align: center;<br>
+}
+</td>
+<td><p style="text-align:center;">Centered Text</p></td>
+</tr>
+
+<!-- BORDER -->
+<tr>
+<td>Border</td>
+<td>
+div {<br>
+&nbsp;&nbsp;border: 2px solid black;<br>
+}
+</td>
+<td><div style="border:2px solid black;">Box with Border</div></td>
+</tr>
+
+<!-- MARGIN -->
+<tr>
+<td>Margin</td>
+<td>
+div {<br>
+&nbsp;&nbsp;margin: 20px;<br>
+}
+</td>
+<td>Space outside element</td>
+</tr>
+
+<!-- PADDING -->
+<tr>
+<td>Padding</td>
+<td>
+div {<br>
+&nbsp;&nbsp;padding: 20px;<br>
+}
+</td>
+<td><div style="padding:20px;border:1px solid black;">Inner Space</div></td>
+</tr>
+
+<!-- DISPLAY -->
+<tr>
+<td>Display</td>
+<td>
+div {<br>
+&nbsp;&nbsp;display: block;<br>
+}
+</td>
+<td>Defines element type (block/inline)</td>
+</tr>
+
+<!-- FLEX -->
+<tr>
+<td>Flexbox</td>
+<td>
+.container {<br>
+&nbsp;&nbsp;display: flex;<br>
+&nbsp;&nbsp;justify-content: center;<br>
+}
+</td>
+<td>
+<div style="display:flex;justify-content:center;">
+Box Centered
+</div>
+</td>
+</tr>
+
+<!-- GRID -->
+<tr>
+<td>Grid</td>
+<td>
+.container {<br>
+&nbsp;&nbsp;display: grid;<br>
+&nbsp;&nbsp;grid-template-columns: auto auto;<br>
+}
+</td>
+<td>Creates grid layout</td>
+</tr>
+
+<!-- HOVER -->
+<tr>
+<td>Hover Effect</td>
+<td>
+button:hover {<br>
+&nbsp;&nbsp;background: red;<br>
+}
+</td>
+<td>
+<button style="padding:5px;">Hover Me</button>
+</td>
+</tr>
+
+<!-- BOX SHADOW -->
+<tr>
+<td>Box Shadow</td>
+<td>
+div {<br>
+&nbsp;&nbsp;box-shadow: 2px 2px 10px gray;<br>
+}
+</td>
+<td><div style="box-shadow:2px 2px 10px gray;padding:10px;">Shadow Box</div></td>
+</tr>
+
+<!-- BORDER RADIUS -->
+<tr>
+<td>Border Radius</td>
+<td>
+div {<br>
+&nbsp;&nbsp;border-radius: 10px;<br>
+}
+</td>
+<td><div style="border-radius:10px;background:lightblue;padding:10px;">Rounded Box</div></td>
+</tr>
+
+<!-- POSITION -->
+<tr>
+<td>Position</td>
+<td>
+div {<br>
+&nbsp;&nbsp;position: relative;<br>
+&nbsp;&nbsp;top: 10px;<br>
+}
+</td>
+<td>Moves element position</td>
+</tr>
+
+<!-- ANIMATION -->
+<tr>
+<td>Animation</td>
+<td>
+@keyframes move {<br>
+&nbsp;&nbsp;from {left:0;}<br>
+&nbsp;&nbsp;to {left:100px;}<br>
+}
+</td>
+<td>Creates movement animation</td>
+</tr>
+
+<!-- RESPONSIVE -->
+<tr>
+<td>Media Query</td>
+<td>
+@media (max-width:600px) {<br>
+&nbsp;&nbsp;body {background: lightblue;}<br>
+}
+</td>
+<td>Responsive design for mobile</td>
+</tr>
+
+</table>
+
+<div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+    </div>
+
+<button id="topBtn" onclick="scrollToTop()">⬆ Top</button>
+<script>
+// Show button when scrolling down
+window.onscroll = function () {
+    let btn = document.getElementById("topBtn");
+
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>    
+
+    <!-- Dark modE -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            // save mode
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // load saved theme
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+    </script>
+</body>
+</html>

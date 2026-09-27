@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="html.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <h2 class="logo">MAHMUD</h2>
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="home.html">JavaScript&DOM</a></li>
+        <li><a href="service.html">PHP&PHP-MySQL</a></li>
+        <li><a href="contact.html">OOP-PHP</a></li>
+        <li><a href="about.html">MVC</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+</nav>
+
+    <h1 class="home">HTML Complete Basics</h1>
+    <div class="center">
+        <button class="dark-btn" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+    
+    <div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+        
+    </div>
+
+    <h2>HTML Complete Topics (Basics → Advanced)</h2>
+
+
+
+<table border="1" width="100%">
+
+<tr>
+    <th>Topic</th>
+    <th>Code (Text Format)</th>
+    <th>Output / Result</th>
+</tr>
+
+<!-- STRUCTURE -->
+<tr>
+<td>HTML Structure</td>
+<td>
+&lt;html&gt;<br>
+&lt;head&gt;&lt;title&gt;Page&lt;/title&gt;&lt;/head&gt;<br>
+&lt;body&gt;<br>
+Hello World<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</td>
+<td>Displays a webpage with text "Hello World"</td>
+</tr>
+
+<!-- HEADING -->
+<tr>
+<td>Heading</td>
+<td>
+&lt;h1&gt;Hello World&lt;/h1&gt;
+</td>
+<td><h1>Hello World</h1></td>
+</tr>
+
+<!-- PARAGRAPH -->
+<tr>
+<td>Paragraph</td>
+<td>
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+</td>
+<td>This is a paragraph</td>
+</tr>
+
+<!-- LINK -->
+<tr>
+<td>Link</td>
+<td>
+&lt;a href="https://google.com"&gt;Google&lt;/a&gt;
+</td>
+<td><a href="https://google.com">Google</a></td>
+</tr>
+
+<!-- IMAGE -->
+<tr>
+<td>Image</td>
+<td>
+&lt;img src="image.jpg" width="100"&gt;
+</td>
+<td>Shows image (if available)</td>
+</tr>
+
+<!-- LIST -->
+<tr>
+<td>List</td>
+<td>
+&lt;ul&gt;<br>
+&lt;li&gt;Apple&lt;/li&gt;<br>
+&lt;li&gt;Banana&lt;/li&gt;<br>
+&lt;/ul&gt;
+</td>
+<td>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+</ul>
+</td>
+</tr>
+
+<!-- BUTTON -->
+<tr>
+<td>Button</td>
+<td>
+&lt;button&gt;Click Me&lt;/button&gt;
+</td>
+<td><button>Click Me</button></td>
+</tr>
+
+<!-- FORM -->
+<tr>
+<td>Form</td>
+<td>
+&lt;form&gt;<br>
+&lt;input type="text"&gt;<br>
+&lt;button&gt;Submit&lt;/button&gt;<br>
+&lt;/form&gt;
+</td>
+<td>Input box + submit button</td>
+</tr>
+
+<!-- INPUT -->
+<tr>
+<td>Input Types</td>
+<td>
+&lt;input type="text"&gt;<br>
+&lt;input type="email"&gt;<br>
+&lt;input type="password"&gt;
+</td>
+<td>Text, email, password fields</td>
+</tr>
+
+<!-- TABLE -->
+<tr>
+<td>Table</td>
+<td>
+&lt;table&gt;<br>
+&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;/table&gt;
+</td>
+<td>Displays table format data</td>
+</tr>
+
+<!-- DIV -->
+<tr>
+<td>Div</td>
+<td>
+&lt;div&gt;Hello Box&lt;/div&gt;
+</td>
+<td>Block container showing text</td>
+</tr>
+
+<!-- SPAN -->
+<tr>
+<td>Span</td>
+<td>
+&lt;span&gt;Inline Text&lt;/span&gt;
+</td>
+<td>Inline text display</td>
+</tr>
+
+<!-- SEMANTIC -->
+<tr>
+<td>Semantic Tags</td>
+<td>
+&lt;header&gt;&lt;/header&gt;<br>
+&lt;nav&gt;&lt;/nav&gt;<br>
+&lt;footer&gt;&lt;/footer&gt;
+</td>
+<td>Organized webpage structure</td>
+</tr>
+
+<!-- VIDEO -->
+<tr>
+<td>Video</td>
+<td>
+&lt;video controls width="200"&gt;<br>
+&lt;source src="video.mp4"&gt;<br>
+&lt;/video&gt;
+</td>
+<td>Plays video (if file exists)</td>
+</tr>
+
+<!-- AUDIO -->
+<tr>
+<td>Audio</td>
+<td>
+&lt;audio controls&gt;<br>
+&lt;source src="music.mp3"&gt;<br>
+&lt;/audio&gt;
+</td>
+<td>Plays audio file</td>
+</tr>
+
+<!-- IFRAME -->
+<tr>
+<td>Iframe</td>
+<td>
+&lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;
+</td>
+<td>Embeds external webpage</td>
+</tr>
+
+</table>
+
+<div class="box">
+
+    <h2>🔥 Example: How to Create Table in HTML</h2>
+
+<pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Mahmud&lt;/td&gt;
+        &lt;td&gt;21&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Rahim&lt;/td&gt;
+        &lt;td&gt;22&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<p>
+✔ Creates a table with rows and columns  
+✔ <b>&lt;th&gt;</b> = heading  
+✔ <b>&lt;td&gt;</b> = data cell  
+</p>
+
+<hr>
+
+    <h2>🔥 Example: How to Create Form in HTML</h2>
+
+<pre>
+&lt;form&gt;
+
+    &lt;label&gt;Name:&lt;/label&gt;
+    &lt;input type="text" placeholder="Enter name"&gt;
+
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label&gt;Email:&lt;/label&gt;
+    &lt;input type="email" placeholder="Enter email"&gt;
+
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label&gt;Password:&lt;/label&gt;
+    &lt;input type="password"&gt;
+
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+
+<p>
+✔ Form collects user input  
+✔ Used in login, registration, contact pages  
+✔ <b>input</b> = data field, <b>button</b> = submit
+</p>
+
+</div>
+<div class="center">
+        <button class="back-button" onclick="history.back()">Back</button>
+    </div>
+<button id="topBtn" onclick="scrollToTop()">⬆ Top</button>
+<script>
+// Show button when scrolling down
+window.onscroll = function () {
+    let btn = document.getElementById("topBtn");
+
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+    <!-- Dark modE -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            // save mode
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // load saved theme
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+    </script>
+</body>
+</html>
